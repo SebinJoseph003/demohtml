@@ -1,0 +1,62 @@
+.primary-btn {    
+        font-size: 13px;
+        color: $light-color;
+        background-color: $secondary-color;
+        padding: 12px 25px;
+        border-radius: 5px;
+        display: inline-block;
+        transition: color, background-color ease .3s;
+        @include respond-below(sm) {
+            padding: 5px 25px;
+        }
+
+        @include respond-between(sm,md) {
+            padding: 5px 25px;
+        }
+
+        @include respond-above(xl) {
+            font-size: 15px;
+            padding: 15px 30px;
+        }
+
+    &:hover {
+        background-color: $primary-color;
+        color: $light-color;
+    }
+}
+
+.secondary-btn-link {
+    font-weight: $font-medium;
+    font-size: 13px;
+    max-width: 98px;
+    line-height: 23px;
+    cursor: pointer;
+    color: $primary-color-secondary;
+    position: relative;
+    display: block;
+    transition: all ease 0.3s;
+    @include respond-above(xl){
+        font-size: 15px;
+        line-height: 23px;
+        max-width: 107px;
+    }
+    &::after {
+        content: url(../images/btn-arrow.svg);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: block;
+        transition: right ease 0.3s;
+    }
+    &:hover {
+        transform: scale(1.1);
+        color: $secondary-color;
+        &::after {
+            right: -10px;
+            @include respond-above(xl) {
+                right: -15px;
+            }
+        }
+    }
+}

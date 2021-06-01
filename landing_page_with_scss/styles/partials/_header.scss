@@ -1,0 +1,287 @@
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;    
+    .d-flex{ 
+        height: 55px;
+        @include respond-above(sm) {
+            height: 75px;
+        }       
+
+        @include respond-above(xl) {
+            height: 100px;
+        }
+    }
+
+    .brand-logo { 
+        position: relative; 
+        max-width: 135px;
+        z-index: 999;
+        @include respond-below(md){
+            transform: translateY(0px); 
+            display: flex;
+        }
+
+        @include respond-below(sm){
+            transform: translateY(5px); 
+        }
+
+        @include respond-above(md) {
+            max-width: 150px;          
+        }
+
+        @include respond-above(lg) {
+            max-width: 175px;
+
+        }
+
+        @include  respond-above(xl) {
+            max-width: 240px;
+        }     
+        
+        &::before {
+            content: "";
+            background: #072753;
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            position: absolute;
+            top: -55px;
+            left: -10px;
+            opacity: .15;
+            z-index: 0;
+
+            @include respond-below(sm){
+                left: 40px;
+            }
+
+            @include respond-above(sm) {
+                width: 130px;
+                height: 130px;
+                top: -65px;
+            } 
+
+            @include respond-above(md) {
+                width: 150px;
+                height: 150px;
+                top: -75px;
+                left: -10px;
+            } 
+
+            @include respond-above(xl) {
+                width: 200px;
+                height: 200px;
+                top: -100px;
+            } 
+        }
+
+        #hamberger-menu {
+            display: none;
+            margin-right: 16px;
+            @include respond-below(sm){
+                display: block;
+            }
+            #pencet{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                cursor: pointer;
+                width: 32px;
+                height: 34.5px;
+
+                span{
+                    background-color:ghostwhite;
+                    width:2em;
+                    height:.2em;
+                    margin:0.26em 0;
+                    display:block;
+                    transition: transform .4s ease;
+                    transform-origin:0 0;
+                  }
+                &.close span:nth-child(1) {
+                    transform: rotate(45deg) translate(1px, -1px);
+                  }
+                  
+                &.close span:nth-child(2) {
+                    transform: scaleX(0);
+                  }
+                  
+                &.close span:nth-child(3) {
+                    transform: rotate(-45deg) translate(1px, 0);
+                  }  
+              }
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .main-nav {  
+        transition: transform ease 0.3s;
+        @include respond-below(sm) {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: $primary-color;
+            height: 100vh;
+            width: 300px;
+            transform: translateX(-100%)
+        }  
+        &.active {
+            @include respond-below(sm) {                
+                transform: translateX(0%)
+            } 
+        }    
+        ul {
+            @include reset-list();
+            @include respond-below(sm){
+                transform: translateY(60px);
+            }
+
+            @include respond-above(sm) {
+                display: flex;
+            }
+            li {
+                margin: 0 20px;
+                position: relative;             
+                &:hover{
+                    a {
+                        color: $secondary-color;
+                    }
+                }
+                
+                @include respond-below(sm) {
+                    margin: 40px auto;
+                    width: 290px;
+                    text-align: center;
+                    display: block;
+                    cursor: pointer;                    
+                }
+
+                &.active {
+                    a {
+                        position: relative;
+                        color: $secondary-color;
+                        @include respond-below(sm) {
+                            color: $primary-color;
+                        }                        
+                        &::after {
+                            @include respond-below(sm){
+                                content: "";
+                                background-color: #ff9c00;
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                right: -3px;
+                                z-index: -1;
+                            }
+                        }
+                        &::after {
+                            @include respond-above(sm) {
+                                content: "";
+                                background: $light-color;
+                                position: absolute;
+                                bottom: -5px;
+                                left: 0;
+                                width: 100%;
+                                height: 3px;  
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    a {                        
+                        color: $secondary-color;
+                        @include respond-above(sm) {
+                            &::after {
+                                width: 100%;                               
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    position: relative;
+                    font-size: 15px;
+                    color: $light-color;
+                    transition: color ease .3s;
+                    @include respond-below(lg) {
+                        font-size: 13px;
+                    }
+                    @include respond-below(sm){
+                        width: 100%;
+                        display: block;
+                        padding: 5px 0;                        
+                    }
+                    &:hover {                        
+                        @include respond-below(sm){
+                            color: $primary-color;                      
+                        }
+                    }
+                    &::after {
+                        content: "";
+                        background: $light-color;
+                        position: absolute;
+                        bottom: -7px;
+                        left: 0;
+                        width: -0%;
+                        height: 3px; 
+                        transition: width ease .5s;                        
+                    }
+                }
+
+                &::before {
+                    @include respond-below(sm){
+                        content: "";
+                        background-color: #ff9c00;
+                        width: 0;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: -3px;
+                        z-index: -1;
+                        display: block;
+                        transition: width ease 0.5s;
+                    }
+                }
+                &::after{
+                    @include respond-below(sm){
+                        content: "";
+                        background-color: #ff9c00;
+                        width: 0;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: -3px;
+                        z-index: -1;
+                        display: block;
+                        transition: width ease 0.5s;
+                    }
+                }
+
+                &:hover::before {
+                    width: 53%;
+                }
+
+                &:hover::after {
+                    width: 53%;
+                }
+            }
+        }
+    }
+}
+
+// ============================= mobile responsive menu =======================================
+
+  
+ 
+  
+  

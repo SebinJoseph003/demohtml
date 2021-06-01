@@ -1,0 +1,80 @@
+html, body{
+    font-family: $primary-font;
+    font-weight: $font-regular;
+    font-size: 14px;
+    line-height: 26px;
+
+    @include respond-below(lg){
+        font-size: 13px;
+    }
+    
+    @include respond-above(lg){
+        font-size: 14px;
+    }
+
+    @include respond-above(xl){
+        font-size: 15px;
+    }
+}
+
+h1 {
+    font-weight: $font-bold;
+    font-size: calc(2.1rem + 1vw);
+    
+}
+
+h2{
+    font-weight: $font-bold;
+    font-size: calc(1.35rem + 1vw);
+    @include respond-between(sm,md) {
+        font-size: calc(1rem + 1vw);
+    }
+}
+
+h3 {
+    font-weight: $font-bold;
+    font-size: calc(1rem + .27vw);
+}
+
+h4 {
+    font-weight: $font-bold;
+    font-size: 15px;
+    @include respond-above(xl) {
+        font-size: calc(.5rem + .6vw);
+    }
+}
+
+h4 {
+    font-weight: $font-bold;
+    font-size: 17px;    
+}
+p {
+    font-size: 1rem;
+    font-weight: $font-regular;
+    line-height: 22px;
+
+    @include respond-above (sm) {
+        line-height: 23px;
+    }
+
+    @include respond-above (xl) {
+        font-size: 15px;
+        line-height: 26px;
+    }
+}
+
+.section-title {
+    max-width: 700px;
+    h2 {
+        margin-bottom: 20px;
+        @include respond-below(xl){
+            margin-bottom: 15px;
+        }
+    }
+    p{
+        margin-bottom: 60px;
+        @include respond-below(xl){
+            margin-bottom: 45px;
+        }
+    }
+}

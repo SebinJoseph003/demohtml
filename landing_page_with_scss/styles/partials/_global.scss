@@ -1,0 +1,56 @@
+*{
+    @include globalReset();
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,li{
+    @include reset-list();
+}
+
+.container {
+    @include respond-above(xl) {
+        max-width: 1420px;
+    }
+    
+    &.container-small {
+        @include respond-above (lg) {
+            max-width: 1140px;
+        }
+    }
+}
+
+.d-flex {
+    flex-direction: column;
+    &.do-not-break {
+        flex-direction: row;
+    }
+    @include respond-above(sm){
+        flex-direction: row;
+    }
+}
+
+section {
+    transition: transform ease .3s;
+    position: relative;
+}
+
+.push-to-right {
+    transform: translateX(300px);
+}
+
+.section-title {
+    max-width: 700px;
+    h2 {
+        color: $primary-color;
+    }
+
+    p {
+        margin-top: 20px;
+        color: $text-color;
+    }
+}
+
+

@@ -1,0 +1,57 @@
+section.icon-title-info {
+    margin-top: 5%;
+    z-index: 1;
+    @include respond-below(md) {
+        margin-top: 0;
+    } 
+    .row {
+        @include respond-above(lg) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .col-md-4 {
+            @include respond-below(sm) {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+            @include respond-above(lg) {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            @include respond-above(xl) {
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+
+            .info {
+                max-width: 332px;
+                @include respond-below(sm){
+                    margin: 0 auto;
+                }
+                .info-icon {
+                    width: 85px;
+                    padding: 26px;
+                    background: rgba(255, 156, 0, .05);
+                    border-radius: 50%;
+                    margin-bottom: 20px;                    
+                    img {
+                        width: 100%;
+                    }
+                }
+        
+                h3 {
+                    margin-bottom: 20px;
+                    color: $primary-color;
+                }
+        
+                p {
+                    margin-bottom: 20px;
+                    color: $text-color;
+                }
+            }
+    }
+    }
+}

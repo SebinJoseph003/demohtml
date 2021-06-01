@@ -1,0 +1,136 @@
+section.image-info-slider {  
+    margin-top: 90px;
+    @include respond-above(xl){
+        margin-top: 120px;
+    }
+    .container {
+        &.container-small {
+            position: relative;
+            .position-absolute {
+                top: -5%;
+                left: -4%;
+                @include respond-between(lg,xl){
+                    top: -5%;
+                    left: 2%;
+                }
+            }
+            max-width: 750px;
+            @include respond-above(lg){
+                max-width: 1100px;
+            }
+
+            @include respond-above(xl){
+                max-width: 1200px;
+            }
+            .carousel {                
+                .carousel-inner {
+                    .carousel-item {  
+                        .d-flex {
+                            @include respond-below(xl){
+                                justify-content: center;
+                            }              
+                            .image-area {                            
+                                flex: 1;
+                                @include respond-above(sm){
+                                    max-width: 270px;
+                                } 
+                                @include respond-above(lg){
+                                    max-width: 370px;
+                                } 
+                                @include respond-above(xl){
+                                    max-width: 470px;
+                                }  
+                            }
+    
+                            .text-area { 
+                                margin-top: 25px;                         
+                                flex: 2;
+                                @include respond-above(sm) {
+                                    max-width: 470px; 
+                                    margin-left: 25px;
+                                    margin-top: auto;
+                                }
+                                @include respond-above(lg){
+                                    max-width: 535px;
+                                    margin-top: 25px;
+                                    margin-left: 30px;
+                                } 
+                                @include respond-above(xl){
+                                    max-width: 635px;
+                                    margin-top: 30px;
+                                }
+                                h3 {
+                                    margin-bottom: 10px;
+                                    @include respond-above(xl){
+                                        margin-bottom: 15px;
+                                    } 
+                                }
+                                p {
+                                    margin-bottom: 20px;
+                                    @include respond-above(xl){
+                                        margin-bottom: 30px;
+                                    } 
+                                    &:last-child{
+                                        line-height: 25px;
+                                        @include respond-above(lg){
+                                            font-size: 15px;
+                                        } 
+                                        @include respond-above(xl){
+                                            font-size: 17px;
+                                            line-height: 30px;
+                                        }
+                                    }                                
+                                }
+                                * {
+                                    color: $primary-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .carousel-control-prev, .carousel-control-next {                    
+                    top: 25%;
+                    left: 2%;
+                    width: 55px;
+                    height: 55px;
+                    opacity: 1;
+                    @include respond-above(sm) {
+                        top: 95%;
+                        left: 40%;
+                    }
+                    @include respond-above(lg) {
+                        top: 80%;
+                        left: 43.5%;
+                    }
+                    @include respond-above(xl) {                        
+                        left: 42.5%;
+                    }
+                    img{
+                        border: 3px solid $primary-color-secondary;
+                        border-radius: 50%;
+                        padding: 20px 22px;
+                        transition: background-color ease 0.3s;
+                        &:hover {
+                            background-color: $primary-color;
+                        }                        
+                    }
+                }
+
+                .carousel-control-next {
+                    left: auto;
+                    right: 2%;
+                    @include respond-above(sm) {
+                        right: 40%;
+                    }
+                    @include respond-above(lg) {
+                        right: 44%;
+                    }
+                    @include respond-above(xl) {
+                        right: 46%;
+                    }
+                }
+            }
+        }
+    }
+}
